@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils"
 import * as React from "react"
-import { motion } from "framer-motion"
+import { motion, HTMLMotionProps } from "framer-motion"
 
-interface SectionHeadingProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SectionHeadingProps extends HTMLMotionProps<"div"> {
   title: string;
   subtitle?: string;
 }
