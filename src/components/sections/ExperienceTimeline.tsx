@@ -44,7 +44,7 @@ const EXPERIENCES = [
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="py-16 bg-background border-t border-border/30">
+    <section id="experience" className="py-16 border-t border-border/30">
       <div className="container mx-auto px-6 max-w-4xl">
         <SectionHeading title="The Journey So Far" />
 
@@ -77,10 +77,10 @@ export function ExperienceTimeline() {
 
                   {/* Content Card */}
                   <div className={`flex flex-col gap-2 p-6 md:p-8 rounded-3xl border transition-colors ${exp.glow
-                    ? 'bg-card/50 border-accent-primary/30 shadow-lg shadow-accent-primary/5'
+                    ? 'glass-card border-accent-primary/30 shadow-lg shadow-accent-primary/5'
                     : exp.active
-                      ? 'bg-card border-border/80 shadow-md'
-                      : 'bg-card/30 border-border/40 hover:border-border hover:bg-card/80'
+                      ? 'glass-card border-border/80 shadow-md'
+                      : 'glass-panel border-border/40 hover:border-border'
                     }`}>
 
                     <div className="flex flex-col-reverse md:flex-row md:items-center justify-between gap-4 mb-2">

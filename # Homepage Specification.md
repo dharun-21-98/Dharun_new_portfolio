@@ -64,7 +64,7 @@ Resume button should remain highlighted.
 
 ## Supporting Paragraph
 
-I'm a Product Manager with over four years of experience delivering enterprise applications across AI, SaaS, Mobile, Web, and Shopify ecosystems.
+I am a Product Manager with over four years of experience delivering enterprise applications across AI, SaaS, Mobile, Web, and Shopify ecosystems.
 
 I specialize in transforming complex business problems into intuitive digital products by working closely with customers, designers, engineers, and business stakeholders throughout the product lifecycle.
 

@@ -29,7 +29,7 @@ const CATEGORIES = [
 
 export function TechnicalExpertise() {
   return (
-    <section className="py-16 bg-secondary/30">
+    <section className="py-16">
       <div className="container mx-auto px-6 max-w-6xl">
         <SectionHeading title="Technologies I Work With" />
         

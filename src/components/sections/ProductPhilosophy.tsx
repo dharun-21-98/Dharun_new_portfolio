@@ -29,7 +29,7 @@ const PHILOSOPHIES = [
 
 export function ProductPhilosophy() {
   return (
-    <section id="philosophy" className="py-16 bg-secondary/30">
+    <section id="philosophy" className="py-16">
       <div className="container mx-auto px-6 max-w-5xl">
         <SectionHeading 
           title="How I Think About Product" 
@@ -46,7 +46,7 @@ export function ProductPhilosophy() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <div className="bg-card border border-border p-10 h-full flex flex-col gap-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="glass-panel p-10 h-full flex flex-col gap-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 flex items-center justify-center text-accent-primary bg-accent-primary/10 rounded-lg">
                   <item.icon size={24} strokeWidth={2} />
                 </div>

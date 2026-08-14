@@ -11,7 +11,7 @@ const METRICS = [
 
 export function QuickSnapshot() {
   return (
-    <section className="py-10 border-y border-border/50 bg-background relative z-10">
+    <section className="py-10 border-y border-border/50 relative z-10">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="flex flex-wrap items-center justify-between gap-8 md:gap-4">
           {METRICS.map((metric, index) => (

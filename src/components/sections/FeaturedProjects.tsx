@@ -44,7 +44,7 @@ const PROJECTS = [
 
 export function FeaturedProjects() {
   return (
-    <section id="projects" className="py-16 border-y border-border bg-background">
+    <section id="projects" className="py-16 border-y border-border/30 bg-transparent relative z-10">
       <div className="container mx-auto px-6 max-w-6xl">
         <SectionHeading
           title="Products I have worked"
@@ -60,7 +60,7 @@ export function FeaturedProjects() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex flex-col lg:flex-row bg-card border border-border shadow-sm rounded-2xl overflow-hidden group">
+              <div className="flex flex-col lg:flex-row glass-card overflow-hidden group">
                 <div className="lg:w-[45%] h-64 lg:h-auto overflow-hidden bg-muted border-b lg:border-b-0 lg:border-r border-border">
                   <img
                     src={project.image}

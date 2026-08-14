@@ -1,54 +1,101 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
-  /* LIGHT MODE (Clean, Minimalist, Editorial) */
-  --color-background: #ffffff;
-  --color-foreground: #111827; /* gray-900 */
-  --color-secondary: #f3f4f6; /* gray-100 */
-  --color-muted: #6b7280; /* gray-500 */
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-fg);
   
-  /* Retaining Emerald/Teal but tuned for light mode */
-  --color-accent-primary: #059669; /* emerald-600 */
-  --color-accent-secondary: #0891b2; /* cyan-600 */
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
   
-  --color-success: #16a34a;
-  --color-warning: #d97706;
-  --color-danger: #dc2626;
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
   
-  --color-card: #ffffff;
-  --color-border: #e5e7eb; /* gray-200 */
+  --color-card: var(--card);
+  --color-border: var(--border);
 
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-space-grotesk);
-  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
 }
 
 @layer base {
-  /* DARK MODE OVERRIDES */
+  :root, .light {
+    /* LIGHT MODE (Premium Gold) */
+    --bg: #FAFAFA;
+    --fg: #050505;
+    --secondary: #E5E5E5;
+    --muted: #555555;
+    --muted-fg: #666666;
+    
+    --accent-primary: #B38F22;
+    --accent-secondary: #D4AF37;
+    
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+    
+    --card: #FFFFFF;
+    --border: #E0E0E0;
+  }
+
   .dark {
-    --color-background: #09090b; /* zinc-950 */
-    --color-foreground: #fafafa;
-    --color-secondary: #18181b; /* zinc-900 */
-    --color-muted: #a1a1aa; /* zinc-400 */
+    /* DARK MODE */
+    --bg: #050505;
+    --fg: #E5E5E5;
+    --secondary: #111111;
+    --muted: #888888;
+    --muted-fg: #A0A0A0;
     
-    --color-accent-primary: #10b981; /* emerald-500 */
-    --color-accent-secondary: #06b6d4; /* cyan-500 */
+    --accent-primary: #D4AF37;
+    --accent-secondary: #B38F22;
     
-    --color-success: #22C55E;
-    --color-warning: #F59E0B;
-    --color-danger: #EF4444;
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
     
-    --color-card: #09090b;
-    --color-border: #27272a; /* zinc-800 */
+    --card: #080808;
+    --border: #1A1A1A;
   }
 
   html {
     scroll-behavior: smooth;
   }
+  
   body {
     @apply bg-background text-foreground font-sans transition-colors duration-300;
   }
+  
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/80 dark:bg-white/5 backdrop-blur-2xl border border-black/10 dark:border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(255,255,255,0.02)];
+  }
+  .glass-card {
+    @apply bg-white/95 dark:bg-[#111111]/80 backdrop-blur-3xl border border-black/10 dark:border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)];
+  }
+  .glass-panel {
+    @apply bg-white/90 dark:bg-white/10 backdrop-blur-2xl border border-black/15 dark:border-white/15;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted/50 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted/80;
   }
 }

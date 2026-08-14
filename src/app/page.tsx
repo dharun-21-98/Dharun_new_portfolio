@@ -15,17 +15,29 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-screen flex-col">
+      <main className="flex min-h-screen flex-col relative z-10">
         <Hero />
+        
+        {/* High Impact Intro */}
+        <RecruiterHighlights />
+        
+        {/* Core Experience & Projects */}
+        <div id="projects">
+          <FeaturedProjects />
+        </div>
+        
+        <div id="experience">
+          <ExperienceTimeline />
+        </div>
+
+        {/* Skills & Methodology */}
         <div id="about">
           <FeaturedStrengths />
-          <ExperienceTimeline />
           <TechnicalExpertise />
+          <AIWorkflow />
+          <ProductPhilosophy />
         </div>
-        <FeaturedProjects />
-        <ProductPhilosophy />
-        <AIWorkflow />
-        <RecruiterHighlights />
+        
         <Contact />
       </main>
       <Footer />

@@ -26,7 +26,7 @@ function LinkedinIcon(props: any) {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 bg-background border-t border-border/50">
+    <section id="contact" className="py-20 border-t border-border/50">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="flex flex-col lg:flex-row gap-16 items-center lg:items-stretch">
           

@@ -19,7 +19,7 @@ const HIGHLIGHTS = [
 
 export function RecruiterHighlights() {
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-secondary/30 border-t border-border">
+    <section className="py-16 border-t border-border">
       <div className="container mx-auto px-6 max-w-6xl">
         <SectionHeading 
           title="Recruiter Highlights" 
