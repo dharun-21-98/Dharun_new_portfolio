@@ -43,15 +43,11 @@ export function HeroParticles() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={positions.length / 3}
-          array={positions}
-          itemSize={3}
+          args={[positions, 3]}
         />
         <bufferAttribute
           attach="attributes-scale"
-          count={scales.length}
-          array={scales}
-          itemSize={1}
+          args={[scales, 1]}
         />
       </bufferGeometry>
       <pointsMaterial
