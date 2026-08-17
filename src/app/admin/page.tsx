@@ -3,6 +3,7 @@ import { neon } from "@neondatabase/serverless";
 import { LoginForm } from "./LoginForm";
 import { logoutAdmin } from "@/app/actions/auth";
 import { ExpandableMessage } from "./ExpandableMessage";
+import { AutoRefresh } from "./AutoRefresh";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +30,7 @@ export default async function AdminPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-6 md:p-12 font-sans">
+      <AutoRefresh />
       <div className="max-w-6xl mx-auto flex flex-col gap-8">
         <header className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border/50">
           <div>
