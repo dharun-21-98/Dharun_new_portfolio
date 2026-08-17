@@ -2,17 +2,17 @@
 
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { motion } from "framer-motion"
-import { Bot, FileText, LayoutDashboard, Target, Users, PenTool, CheckCircle, Search } from "lucide-react"
+import { Robot, FileText, Kanban, Target, Users, PenNib, CheckCircle, MagnifyingGlass } from "@phosphor-icons/react"
 
 const WORKFLOW = [
-  { step: "Market Research", icon: Search },
+  { step: "Market Research", icon: MagnifyingGlass },
   { step: "Requirement Drafting", icon: FileText },
   { step: "User Stories", icon: Users },
   { step: "Acceptance Criteria", icon: CheckCircle },
-  { step: "Wireframing", icon: PenTool },
+  { step: "Wireframing", icon: PenNib },
   { step: "Sprint Planning", icon: Target },
-  { step: "Release Documentation", icon: LayoutDashboard },
-  { step: "Customer Support", icon: Bot }
+  { step: "Release Documentation", icon: Kanban },
+  { step: "Customer Support", icon: Robot }
 ]
 
 export function AIWorkflow() {
@@ -42,7 +42,7 @@ export function AIWorkflow() {
               >
                 <div className="flex flex-col items-center justify-center gap-4 p-8 h-full text-center bg-background border border-border/60 rounded-3xl transition-all duration-300 hover:border-accent-primary/40 hover:shadow-lg hover:-translate-y-1 group">
                   <div className="w-16 h-16 rounded-2xl bg-secondary/50 flex items-center justify-center text-muted group-hover:text-accent-primary group-hover:bg-accent-primary/10 transition-colors shadow-sm">
-                    <Icon size={28} strokeWidth={1.5} />
+                    <Icon size={32} weight="duotone" />
                   </div>
                   <span className="text-sm md:text-base font-semibold text-foreground/80 group-hover:text-foreground transition-colors mt-2">
                     {item.step}

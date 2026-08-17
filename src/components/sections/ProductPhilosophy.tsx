@@ -2,7 +2,7 @@
 
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { motion } from "framer-motion"
-import { Users, TrendingUp, Cpu, RefreshCw } from "lucide-react"
+import { Users, TrendUp, Cpu, ArrowsClockwise } from "@phosphor-icons/react"
 
 const PHILOSOPHIES = [
   {
@@ -13,7 +13,7 @@ const PHILOSOPHIES = [
   {
     title: "Business Value",
     desc: "Prioritize features that create measurable impact and support a larger objective.",
-    icon: TrendingUp,
+    icon: TrendUp,
   },
   {
     title: "Technical Feasibility",
@@ -23,7 +23,7 @@ const PHILOSOPHIES = [
   {
     title: "Continuous Improvement",
     desc: "Treat every release as an opportunity to learn and iterate. Data and feedback drive the roadmap.",
-    icon: RefreshCw,
+    icon: ArrowsClockwise,
   }
 ]
 
@@ -48,7 +48,7 @@ export function ProductPhilosophy() {
             >
               <div className="glass-panel p-10 h-full flex flex-col gap-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 flex items-center justify-center text-accent-primary bg-accent-primary/10 rounded-lg">
-                  <item.icon size={24} strokeWidth={2} />
+                  <item.icon size={32} weight="duotone" />
                 </div>
                 
                 <div>

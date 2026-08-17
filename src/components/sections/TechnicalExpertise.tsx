@@ -2,27 +2,27 @@
 
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { motion } from "framer-motion"
-import { LayoutList, Server, BarChart3, Bot } from "lucide-react"
+import { Kanban, HardDrives, ChartBar, Robot } from "@phosphor-icons/react"
 
 const CATEGORIES = [
   {
     title: "Product",
-    icon: LayoutList,
+    icon: Kanban,
     skills: ["Product Discovery", "PRDs", "Roadmaps", "Backlog Grooming", "Sprint Planning", "User Stories", "Agile", "Scrum"]
   },
   {
     title: "Technical",
-    icon: Server,
+    icon: HardDrives,
     skills: ["REST APIs", "Flutter", "React & Node.js", "Salesforce", "Shopify", "AWS", "SQL", "Postman", "Webhooks", "Stripe"]
   },
   {
     title: "Analytics",
-    icon: BarChart3,
+    icon: ChartBar,
     skills: ["Power BI", "Tableau", "Excel"]
   },
   {
     title: "AI",
-    icon: Bot,
+    icon: Robot,
     skills: ["ChatGPT", "Gemini", "Claude", "Prompt Engineering", "AI Documentation", "Workflow Automation"]
   }
 ]
@@ -46,7 +46,7 @@ export function TechnicalExpertise() {
               <div className="bg-card border border-border p-6 h-full rounded-2xl shadow-sm">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 bg-accent-primary/10 text-accent-primary rounded-lg">
-                    <category.icon size={20} strokeWidth={2} />
+                    <category.icon size={28} weight="duotone" />
                   </div>
                   <h3 className="text-lg font-bold font-heading">{category.title}</h3>
                 </div>

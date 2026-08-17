@@ -2,7 +2,7 @@
 
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { motion } from "framer-motion"
-import { Check } from "lucide-react"
+import { CheckCircle } from "@phosphor-icons/react"
 
 const HIGHLIGHTS = [
   "4+ Years of Product & Project Management Experience",
@@ -37,7 +37,7 @@ export function RecruiterHighlights() {
               className="flex items-center gap-4 p-5 bg-card border border-border rounded-xl shadow-sm hover:border-accent-primary/50 hover:shadow-md transition-all group"
             >
               <div className="shrink-0 w-8 h-8 rounded-full bg-success/10 flex items-center justify-center text-success border border-success/20 group-hover:bg-success group-hover:text-white transition-colors">
-                <Check size={16} strokeWidth={3} />
+                <CheckCircle size={20} weight="duotone" />
               </div>
               <span className="font-medium text-foreground">{highlight}</span>
             </motion.div>

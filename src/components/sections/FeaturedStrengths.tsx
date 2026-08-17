@@ -3,21 +3,21 @@
 import { Card } from "@/components/ui/Card"
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { motion } from "framer-motion"
-import { Search, Code2, Sparkles, Users } from "lucide-react"
+import { MagnifyingGlass, Code, Sparkle, Users } from "@phosphor-icons/react"
 
 const STRENGTHS = [
   {
-    icon: Search,
+    icon: MagnifyingGlass,
     title: "Product Discovery",
     desc: "Conduct stakeholder workshops, define requirements, prioritize features, and translate business needs into clear product roadmaps."
   },
   {
-    icon: Code2,
+    icon: Code,
     title: "Technical Product Management",
     desc: "Collaborate closely with engineering teams, understand APIs, integrations, backend workflows, cloud deployments, and technical trade-offs."
   },
   {
-    icon: Sparkles,
+    icon: Sparkle,
     title: "AI-Driven Product Development",
     desc: "Leverage AI to accelerate product discovery, documentation, user story creation, competitive research, and customer support experiences."
   },
@@ -46,7 +46,7 @@ export function FeaturedStrengths() {
             >
               <Card className="p-6 h-full flex flex-col gap-4 group">
                 <div className="w-12 h-12 rounded-lg bg-accent-primary/10 flex items-center justify-center text-accent-primary mb-2 transition-transform group-hover:scale-110">
-                  <strength.icon size={24} />
+                  <strength.icon size={32} weight="duotone" />
                 </div>
                 <h3 className="text-xl font-bold font-heading">{strength.title}</h3>
                 <p className="text-muted text-sm leading-relaxed">{strength.desc}</p>

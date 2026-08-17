@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/Button"
 const METRICS = [
-  { value: "4+", label: "Years Experience" },
+  { value: "5+", label: "Years Experience" },
   { value: "5", label: "Core Industries" },
   { value: "10+", label: "Products" },
   { value: "E2E", label: "Product Delivery" },
@@ -37,27 +37,26 @@ export function Hero() {
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.1 } }
             }}
-            className="text-6xl md:text-7xl lg:text-[6rem] font-medium font-heading leading-[1.1] tracking-tight text-foreground text-balance"
+            className="text-3xl md:text-5xl lg:text-[4.2rem] font-medium font-heading leading-[1.2] tracking-tight text-foreground w-full max-w-6xl mx-auto mt-6"
           >
-            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }} className="inline-block">Creating products</motion.span>{" "}
-            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }} className="inline-block">that</motion.span> <br className="hidden lg:block" />
-            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }} className="inline-block text-accent-primary italic font-semibold">solve real problems.</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }} className="inline-block whitespace-nowrap">Creating products that</motion.span> <br className="hidden md:block" />
+            <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }} className="inline-block text-accent-primary italic font-semibold whitespace-nowrap mt-2">solve real problems.</motion.span>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-2xl text-muted max-w-3xl leading-relaxed text-balance mx-auto pointer-events-auto"
+            className="text-lg md:text-2xl text-muted max-w-3xl leading-relaxed text-balance mx-auto pointer-events-auto mt-12"
           >
-            I am a Product Manager with over four years of experience delivering enterprise applications across AI, SaaS, Mobile, Web, and Shopify ecosystems.
+            I am a Product Manager with over five years of experience delivering enterprise applications across AI, SaaS, Mobile, Web, and Shopify ecosystems.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-wrap items-center justify-center gap-8 md:gap-12 my-6 glass p-6 md:p-8 rounded-2xl w-full max-w-4xl mx-auto pointer-events-auto"
+            className="flex flex-wrap items-center justify-between gap-8 md:gap-4 mt-16 mb-8 glass px-8 md:px-16 py-8 rounded-2xl w-full max-w-4xl mx-auto pointer-events-auto"
           >
             {METRICS.map((metric) => (
               <div key={metric.label} className="flex flex-col gap-1 items-start text-left">

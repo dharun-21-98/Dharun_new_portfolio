@@ -2,13 +2,13 @@
 
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { motion } from "framer-motion"
-import { Briefcase, Building2, LayoutDashboard, Sparkles, Rocket } from "lucide-react"
+import { Briefcase, Buildings, Kanban, Sparkle, RocketLaunch } from "@phosphor-icons/react"
 
 const EXPERIENCES = [
   {
     role: "SAM Analyst",
     company: "EY GDS",
-    icon: Building2,
+    icon: Buildings,
     logo: "/EY.jpg",
     date: "Early Career"
   },
@@ -22,21 +22,21 @@ const EXPERIENCES = [
   {
     role: "Product Manager",
     company: "doodleblue Innovations",
-    icon: Rocket,
+    icon: RocketLaunch,
     logo: "/doodleblue.png",
     date: "Management"
   },
   {
     role: "Building Enterprise Products",
     company: "Present Focus",
-    icon: LayoutDashboard,
+    icon: Kanban,
     date: "Current",
     active: true
   },
   {
     role: "Exploring AI-Native Product Management",
     company: "The Horizon",
-    icon: Sparkles,
+    icon: Sparkle,
     date: "Future",
     glow: true
   }
@@ -72,7 +72,7 @@ export function ExperienceTimeline() {
                         ? 'bg-foreground text-background shadow-md'
                         : 'bg-secondary text-muted group-hover:bg-accent-primary/20 group-hover:text-accent-primary'
                     }`}>
-                    <Icon size={20} strokeWidth={2} />
+                    <Icon size={24} weight="duotone" />
                   </div>
 
                   {/* Content Card */}

@@ -6,18 +6,18 @@ import { Float, Environment, MeshTransmissionMaterial, ContactShadows } from "@r
 import * as THREE from "three";
 import { useTheme } from "next-themes";
 import { HeroParticles } from "./HeroParticles";
-import { Code2, Database, Cloud, LineChart, PenTool, Smartphone, Layers, Boxes } from "lucide-react";
+import { Code, Database, Cloud, ChartLineUp, PenNib, DeviceMobile, Stack, Package } from "@phosphor-icons/react";
 import { Html } from "@react-three/drei";
 
 const ICONS = [
-  { icon: Code2, color: "#3b82f6" }, 
+  { icon: Code, color: "#3b82f6" }, 
   { icon: Database, color: "#10b981" }, 
   { icon: Cloud, color: "#f59e0b" }, 
-  { icon: LineChart, color: "#8b5cf6" }, 
-  { icon: PenTool, color: "#ec4899" }, 
-  { icon: Smartphone, color: "#14b8a6" }, 
-  { icon: Layers, color: "#f43f5e" }, 
-  { icon: Boxes, color: "#84cc16" }, 
+  { icon: ChartLineUp, color: "#8b5cf6" }, 
+  { icon: PenNib, color: "#ec4899" }, 
+  { icon: DeviceMobile, color: "#14b8a6" }, 
+  { icon: Stack, color: "#f43f5e" }, 
+  { icon: Package, color: "#84cc16" }, 
 ];
 
 function BillboardHtml({ children }: { children: React.ReactNode }) {
@@ -60,7 +60,7 @@ function OrbitingIcons({ radius = 3.8, speed = 0.15 }) {
                 className="w-12 h-12 flex items-center justify-center rounded-2xl glass-panel shadow-2xl transition-transform hover:scale-125 pointer-events-auto"
                 style={{ color: item.color }}
               >
-                <item.icon size={24} strokeWidth={1.5} />
+                <item.icon size={28} weight="duotone" />
               </div>
             </BillboardHtml>
           </group>

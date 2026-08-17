@@ -4,17 +4,17 @@ import { useRef, useState, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, ContactShadows, Environment, MeshTransmissionMaterial, Html } from "@react-three/drei";
 import * as THREE from "three";
-import { Code2, Database, Cloud, LineChart, PenTool, Smartphone, Layers, Boxes } from "lucide-react";
+import { Code, Database, Cloud, ChartLineUp, PenNib, DeviceMobile, Stack, Package } from "@phosphor-icons/react";
 
 const ICONS = [
-  { icon: Code2, color: "#3b82f6" }, // React/Frontend
+  { icon: Code, color: "#3b82f6" }, // React/Frontend
   { icon: Database, color: "#10b981" }, // Data/Backend
   { icon: Cloud, color: "#f59e0b" }, // AWS/Cloud
-  { icon: LineChart, color: "#8b5cf6" }, // Analytics
-  { icon: PenTool, color: "#ec4899" }, // Design/Figma
-  { icon: Smartphone, color: "#14b8a6" }, // Mobile
-  { icon: Layers, color: "#f43f5e" }, // Architecture
-  { icon: Boxes, color: "#84cc16" }, // Microservices
+  { icon: ChartLineUp, color: "#8b5cf6" }, // Analytics
+  { icon: PenNib, color: "#ec4899" }, // Design/Figma
+  { icon: DeviceMobile, color: "#14b8a6" }, // Mobile
+  { icon: Stack, color: "#f43f5e" }, // Architecture
+  { icon: Package, color: "#84cc16" }, // Microservices
 ];
 
 function OrbitingIcons({ radius = 3.5, speed = 0.5 }) {
@@ -42,7 +42,7 @@ function OrbitingIcons({ radius = 3.5, speed = 0.5 }) {
                 className="w-12 h-12 flex items-center justify-center rounded-2xl glass-panel shadow-2xl transition-transform hover:scale-125"
                 style={{ color: item.color }}
               >
-                <item.icon size={24} strokeWidth={1.5} />
+                <item.icon size={28} weight="duotone" />
               </div>
             </BillboardHtml>
           </group>
