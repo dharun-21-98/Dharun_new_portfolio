@@ -101,7 +101,7 @@ function InteractiveShape() {
           <icosahedronGeometry args={[1.5, 0]} />
           <MeshTransmissionMaterial
             backside
-            samples={2}
+            samples={4}
             resolution={256}
             thickness={0.5}
             color="#00E0BA"
@@ -128,7 +128,7 @@ export function HeroInteractiveShape() {
   return (
     <div className="w-full h-full relative cursor-pointer">
       <CanvasErrorBoundary>
-        <Canvas camera={{ position: [0, 0, 9], fov: 45 }} dpr={[1, 2]} gl={{ powerPreference: "high-performance", antialias: false }}>
+        <Canvas camera={{ position: [0, 0, 9], fov: 45 }} dpr={[1, 2]}>
           <Suspense fallback={<CanvasLoader />}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} />

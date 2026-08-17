@@ -154,7 +154,7 @@ export function ScrollTransitionScene() {
               <icosahedronGeometry args={[1.5, 0]} />
               <MeshTransmissionMaterial
                 backside
-                samples={2}
+                samples={4}
                 resolution={256}
                 thickness={0.5}
                 chromaticAberration={0.1}
@@ -181,7 +181,7 @@ export function ScrollTransitionScene() {
             <torusKnotGeometry args={[1, 0.3, 128, 32]} />
             <MeshTransmissionMaterial
               backside
-              samples={2}
+              samples={4}
               resolution={256}
               thickness={2}
               chromaticAberration={0.3}
@@ -201,7 +201,7 @@ export function ScrollTransitionScene() {
             <sphereGeometry args={[1.2, 64, 64]} />
             <MeshTransmissionMaterial
               backside
-              samples={2}
+              samples={4}
               resolution={256}
               thickness={1.5}
               chromaticAberration={0.5}
@@ -221,7 +221,7 @@ export function ScrollTransitionScene() {
             <octahedronGeometry args={[1.5, 0]} />
             <MeshTransmissionMaterial
               backside
-              samples={2}
+              samples={4}
               resolution={256}
               thickness={2}
               chromaticAberration={0.2}

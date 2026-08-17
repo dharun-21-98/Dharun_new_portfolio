@@ -17,7 +17,7 @@ export function Canvas3D() {
         <Canvas
           camera={{ position: [0, 0, 9], fov: 45 }}
           dpr={[1, 2]} // Optimize pixel ratio
-          gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+          gl={{ antialias: true, alpha: true }}
         >
           <Suspense fallback={<CanvasLoader />}>
             <ScrollTransitionScene />
