@@ -2,7 +2,7 @@
 
 > A modern, highly interactive, and premium portfolio website built to showcase my product management experience, philosophies, and technical expertise.
 
-![Portfolio Preview](./public/favicon.ico) *(Insert a screenshot of your hero section here!)*
+*(<img width="1498" height="651" alt="image" src="https://github.com/user-attachments/assets/db9e9dc3-99fb-4620-9b06-2e564d05186e" />)*
 
 ## 🌟 Key Features
 
