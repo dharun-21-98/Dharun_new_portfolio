@@ -12,10 +12,15 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     return { error: "All fields are required." };
   }
 
+  if (message.length > 500) {
+    return { error: "Message cannot exceed 500 characters." };
+  }
+
   try {
     const dbUrl = process.env.dharun_form_DATABASE_URL || process.env.DATABASE_URL || process.env.POSTGRES_URL;
     const sql = neon(dbUrl!);
-    await sql`INSERT INTO messages (name, email, message) VALUES (${name}, ${email}, ${message})`;
+    const environment = process.env.NODE_ENV || 'development';
+    await sql`INSERT INTO messages (name, email, message, environment) VALUES (${name}, ${email}, ${message}, ${environment})`;
     
     revalidatePath("/admin");
     return { success: "Message sent successfully! I will get back to you soon." };

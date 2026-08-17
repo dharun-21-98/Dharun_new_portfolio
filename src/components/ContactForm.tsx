@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useRef, useEffect } from "react";
+import { useActionState, useRef, useEffect, useState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import { Button } from "@/components/ui/Button";
 
@@ -10,11 +10,13 @@ const initialState: FormState = null;
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState as any);
   const formRef = useRef<HTMLFormElement>(null);
+  const [charCount, setCharCount] = useState(0);
 
   // Reset form on success
   useEffect(() => {
     if (state?.success && formRef.current) {
       formRef.current.reset();
+      setCharCount(0);
     }
   }, [state]);
 
@@ -50,13 +52,20 @@ export function ContactForm() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="message" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Message</label>
+          <div className="flex items-center justify-between">
+            <label htmlFor="message" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Message</label>
+            <span className={`text-[10px] uppercase tracking-wider ${charCount >= 500 ? 'text-danger' : 'text-muted-foreground'}`}>
+              {500 - charCount} chars remaining
+            </span>
+          </div>
           <textarea 
             id="message"
             name="message" 
             required
+            maxLength={500}
             disabled={isPending}
             rows={4}
+            onChange={(e) => setCharCount(e.target.value.length)}
             className="bg-secondary/40 border border-border/80 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary/50 transition-all resize-none disabled:opacity-50"
             placeholder="Hi Dharun, I'd like to discuss a product role at our company..."
           />
