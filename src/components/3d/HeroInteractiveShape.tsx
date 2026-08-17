@@ -2,7 +2,7 @@
 
 import { useRef, useState, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, ContactShadows, Environment, MeshTransmissionMaterial, Html } from "@react-three/drei";
+import { Float, ContactShadows, Environment, MeshTransmissionMaterial, Html, Lightformer } from "@react-three/drei";
 import * as THREE from "three";
 import { Code, Database, Cloud, ChartLineUp, PenNib, DeviceMobile, Stack, Package } from "@phosphor-icons/react";
 
@@ -133,7 +133,14 @@ export function HeroInteractiveShape() {
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} />
             <InteractiveShape />
-            <Environment preset="city" />
+            <Environment resolution={256}>
+              <group rotation={[-Math.PI / 3, 0, 0]}>
+                <Lightformer intensity={4} rotation-x={Math.PI / 2} position={[0, 5, -9]} scale={[10, 10, 1]} />
+                <Lightformer intensity={2} rotation-y={Math.PI / 2} position={[-5, 1, -1]} scale={[10, 2, 1]} />
+                <Lightformer intensity={2} rotation-y={-Math.PI / 2} position={[5, 1, -1]} scale={[10, 2, 1]} />
+                <Lightformer intensity={2} rotation-x={-Math.PI / 2} position={[0, -5, 0]} scale={[10, 10, 1]} />
+              </group>
+            </Environment>
             <ContactShadows position={[0, -3.5, 0]} opacity={0.5} scale={15} blur={2.5} far={4} />
           </Suspense>
         </Canvas>

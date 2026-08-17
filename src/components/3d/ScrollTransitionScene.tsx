@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Float, Environment, MeshTransmissionMaterial, ContactShadows } from "@react-three/drei";
+import { Float, Environment, MeshTransmissionMaterial, ContactShadows, Lightformer } from "@react-three/drei";
 import * as THREE from "three";
 import { HeroParticles } from "./HeroParticles";
 import { Code, Database, Cloud, ChartLineUp, PenNib, DeviceMobile, Stack, Package } from "@phosphor-icons/react";
@@ -238,7 +238,14 @@ export function ScrollTransitionScene() {
         </Float>
       </group>
 
-      <Environment preset="city" />
+      <Environment resolution={256}>
+        <group rotation={[-Math.PI / 3, 0, 0]}>
+          <Lightformer intensity={4} rotation-x={Math.PI / 2} position={[0, 5, -9]} scale={[10, 10, 1]} />
+          <Lightformer intensity={2} rotation-y={Math.PI / 2} position={[-5, 1, -1]} scale={[10, 2, 1]} />
+          <Lightformer intensity={2} rotation-y={-Math.PI / 2} position={[5, 1, -1]} scale={[10, 2, 1]} />
+          <Lightformer intensity={2} rotation-x={-Math.PI / 2} position={[0, -5, 0]} scale={[10, 10, 1]} />
+        </group>
+      </Environment>
       <ContactShadows position={[0, -3.5, 0]} opacity={0.4} scale={15} blur={2.5} far={4} color={isDark ? "#000000" : "#1e293b"} />
     </>
   );
