@@ -3,13 +3,10 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useTheme } from "next-themes";
 
 export function HeroParticles() {
   const pointsRef = useRef<THREE.Points>(null);
-  const { theme } = useTheme();
-
-  const isDark = theme === "dark";
+  const isDark = true;
   const particleColor = isDark ? "#00E0BA" : "#00A388"; // Hacker cyan
 
   const count = 3000;

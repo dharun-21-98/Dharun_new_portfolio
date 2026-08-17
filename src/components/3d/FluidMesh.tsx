@@ -3,12 +3,11 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useTheme } from "next-themes";
 import { Float, MeshDistortMaterial } from "@react-three/drei";
 
 export function FluidMesh() {
   const meshRef = useRef<THREE.Mesh>(null);
-  const { theme } = useTheme();
+  const isDark = true;
   
   // Use Gold for the mesh material to match the new accent color
   const meshColor = "#00E0BA"; 

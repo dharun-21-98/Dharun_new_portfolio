@@ -101,7 +101,8 @@ function InteractiveShape() {
           <icosahedronGeometry args={[1.5, 0]} />
           <MeshTransmissionMaterial
             backside
-            samples={4}
+            samples={2}
+            resolution={256}
             thickness={0.5}
             color="#00E0BA"
             emissive="#00A388"
@@ -119,16 +120,24 @@ function InteractiveShape() {
   );
 }
 
+import { CanvasErrorBoundary } from "./CanvasErrorBoundary";
+import { CanvasLoader } from "./CanvasLoader";
+import { Suspense } from "react";
+
 export function HeroInteractiveShape() {
   return (
     <div className="w-full h-full relative cursor-pointer">
-      <Canvas camera={{ position: [0, 0, 9], fov: 45 }} dpr={[1, 2]}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 10]} intensity={1} />
-        <InteractiveShape />
-        <Environment preset="city" />
-        <ContactShadows position={[0, -3.5, 0]} opacity={0.5} scale={15} blur={2.5} far={4} />
-      </Canvas>
+      <CanvasErrorBoundary>
+        <Canvas camera={{ position: [0, 0, 9], fov: 45 }} dpr={[1, 2]} gl={{ powerPreference: "high-performance", antialias: false }}>
+          <Suspense fallback={<CanvasLoader />}>
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 10]} intensity={1} />
+            <InteractiveShape />
+            <Environment preset="city" />
+            <ContactShadows position={[0, -3.5, 0]} opacity={0.5} scale={15} blur={2.5} far={4} />
+          </Suspense>
+        </Canvas>
+      </CanvasErrorBoundary>
     </div>
   );
 }

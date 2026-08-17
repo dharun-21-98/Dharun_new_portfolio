@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float, Environment, MeshTransmissionMaterial, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
-import { useTheme } from "next-themes";
 import { HeroParticles } from "./HeroParticles";
 import { Code, Database, Cloud, ChartLineUp, PenNib, DeviceMobile, Stack, Package } from "@phosphor-icons/react";
 import { Html } from "@react-three/drei";
@@ -78,8 +77,7 @@ export function ScrollTransitionScene() {
   const mesh3Ref = useRef<THREE.Mesh>(null); // Experience: Sphere
   const mesh4Ref = useRef<THREE.Mesh>(null); // About: Octahedron
 
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const isDark = true;
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Use a simple scroll listener to update progress without framer-motion dependency
@@ -156,7 +154,8 @@ export function ScrollTransitionScene() {
               <icosahedronGeometry args={[1.5, 0]} />
               <MeshTransmissionMaterial
                 backside
-                samples={4}
+                samples={2}
+                resolution={256}
                 thickness={0.5}
                 chromaticAberration={0.1}
                 anisotropy={0.3}
@@ -182,7 +181,8 @@ export function ScrollTransitionScene() {
             <torusKnotGeometry args={[1, 0.3, 128, 32]} />
             <MeshTransmissionMaterial
               backside
-              samples={4}
+              samples={2}
+              resolution={256}
               thickness={2}
               chromaticAberration={0.3}
               anisotropy={0.5}
@@ -201,7 +201,8 @@ export function ScrollTransitionScene() {
             <sphereGeometry args={[1.2, 64, 64]} />
             <MeshTransmissionMaterial
               backside
-              samples={4}
+              samples={2}
+              resolution={256}
               thickness={1.5}
               chromaticAberration={0.5}
               anisotropy={0.1}
@@ -220,7 +221,8 @@ export function ScrollTransitionScene() {
             <octahedronGeometry args={[1.5, 0]} />
             <MeshTransmissionMaterial
               backside
-              samples={4}
+              samples={2}
+              resolution={256}
               thickness={2}
               chromaticAberration={0.2}
               anisotropy={0.4}

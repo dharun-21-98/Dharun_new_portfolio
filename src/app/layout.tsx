@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   description: "AI-Native Technical Product Manager building scalable digital products across Enterprise SaaS, Mobile, Commerce, and AI platforms.",
 };
 
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CustomCursor } from "@/components/CustomCursor";
 export default function RootLayout({
@@ -31,24 +30,16 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${hackerFontHeading.variable} ${hackerFont.variable} antialiased`}
+      className={`${hackerFontHeading.variable} ${hackerFont.variable} antialiased dark`}
     >
       <body
         suppressHydrationWarning
         className="flex flex-col font-sans bg-background text-foreground selection:bg-accent-primary selection:text-white"
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <SmoothScroll>
-            <CustomCursor />
-            {children}
-          </SmoothScroll>
-        </ThemeProvider>
+        <SmoothScroll>
+          <CustomCursor />
+          {children}
+        </SmoothScroll>
         <Analytics />
       </body>
     </html>
