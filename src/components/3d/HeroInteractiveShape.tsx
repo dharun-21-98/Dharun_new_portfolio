@@ -102,16 +102,14 @@ function InteractiveShape() {
           <MeshTransmissionMaterial
             backside
             samples={4}
-            thickness={2}
-            chromaticAberration={0.1}
-            anisotropy={0.3}
-            distortion={0.3}
-            distortionScale={0.5}
-            temporalDistortion={0.1}
-            clearcoat={1}
-            attenuationDistance={1.2}
-            attenuationColor="#D4AF37"
-            color="#ffffff"
+            thickness={0.5}
+            color="#00E0BA"
+            emissive="#00A388"
+            roughness={0.1}
+            metalness={0.8}
+            transmission={0.9}
+            ior={1.5}
+            attenuationColor="#00E0BA"
           />
         </mesh>
       </Float>

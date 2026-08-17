@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Syne, Outfit } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 
-const syne = Syne({
-  variable: "--font-heading",
+const hackerFont = JetBrains_Mono({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  variable: "--font-sans",
+// Since we are using one font for both, we can alias it
+const hackerFontHeading = JetBrains_Mono({
+  variable: "--font-heading",
   subsets: ["latin"],
 });
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { CustomCursor } from "@/components/CustomCursor";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +31,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${syne.variable} ${outfit.variable} antialiased`}
+      className={`${hackerFontHeading.variable} ${hackerFont.variable} antialiased`}
     >
       <body
         suppressHydrationWarning
@@ -38,10 +40,12 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
+          forcedTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <SmoothScroll>
+            <CustomCursor />
             {children}
           </SmoothScroll>
         </ThemeProvider>

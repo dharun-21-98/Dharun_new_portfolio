@@ -10,7 +10,7 @@ export function HeroParticles() {
   const { theme } = useTheme();
 
   const isDark = theme === "dark";
-  const particleColor = isDark ? "#2563EB" : "#059669"; // Accent colors
+  const particleColor = isDark ? "#00E0BA" : "#00A388"; // Hacker cyan
 
   const count = 3000;
   const [positions, scales] = useMemo(() => {

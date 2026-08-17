@@ -11,7 +11,7 @@ export function FluidMesh() {
   const { theme } = useTheme();
   
   // Use Gold for the mesh material to match the new accent color
-  const meshColor = "#D4AF37"; 
+  const meshColor = "#00E0BA"; 
 
   useFrame((state) => {
     if (!meshRef.current) return;

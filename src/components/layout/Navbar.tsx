@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { ThemeToggle } from "@/components/ThemeToggle"
 
 const NAV_LINKS = [
   { name: "About", href: "#about" },
@@ -36,7 +35,7 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
-        <Link href="/" className="text-xl font-heading font-bold text-foreground hover:text-accent-primary transition-colors">
+        <Link href="/" className="text-xl font-heading font-bold text-foreground hover:text-accent-primary transition-colors outline-none focus:outline-none focus-visible:outline-none border-none">
           Dharunanand R
         </Link>
 
@@ -51,7 +50,6 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <ThemeToggle />
           <Button as="a" href="/Dharun_R_4.9_PM_YOE.pdf" target="_blank" rel="noopener noreferrer" variant="primary">
             Resume
           </Button>
@@ -59,7 +57,6 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-4 md:hidden">
-          <ThemeToggle />
           <button
             className="p-2 text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -9,10 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
     "@types/three": "^0.185.4",
     "@vercel/analytics": "^2.0.1",
+    "@vercel/postgres": "^0.10.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.43.0",
     "lenis": "^1.3.26",

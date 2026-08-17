@@ -31,8 +31,8 @@
     --muted: #555555;
     --muted-fg: #666666;
     
-    --accent-primary: #B38F22;
-    --accent-secondary: #D4AF37;
+    --accent-primary: #00A388;
+    --accent-secondary: #00E0BA;
     
     --success: #16a34a;
     --warning: #d97706;
@@ -50,8 +50,8 @@
     --muted: #888888;
     --muted-fg: #A0A0A0;
     
-    --accent-primary: #D4AF37;
-    --accent-secondary: #B38F22;
+    --accent-primary: #00E0BA;
+    --accent-secondary: #00A388;
     
     --success: #22C55E;
     --warning: #F59E0B;
@@ -67,6 +67,12 @@
   
   body {
     @apply bg-background text-foreground font-sans transition-colors duration-300;
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    body, a, button, [role="button"], input, select, textarea {
+      cursor: none !important;
+    }
   }
   
   h1, h2, h3, h4, h5, h6 {

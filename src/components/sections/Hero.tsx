@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/Button"
-import { HeroInteractiveShape } from "@/components/3d/HeroInteractiveShape"
-
 const METRICS = [
   { value: "4+", label: "Years Experience" },
   { value: "5", label: "Core Industries" },
@@ -14,13 +12,7 @@ const METRICS = [
 export function Hero() {
   return (
     <section id="hero" className="min-h-[100vh] flex items-center pt-28 pb-12 bg-transparent relative overflow-hidden">
-      {/* Remove the static background gradient to let 3D Canvas shine */}
-
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-60">
-        <div className="w-full h-full max-w-5xl">
-          <HeroInteractiveShape />
-        </div>
-      </div>
+      {/* 3D background is now handled globally via Canvas3D */}
 
       <div className="container mx-auto px-6 max-w-5xl flex flex-col items-center text-center gap-10 relative z-10 pointer-events-none">
         <div className="pointer-events-auto">

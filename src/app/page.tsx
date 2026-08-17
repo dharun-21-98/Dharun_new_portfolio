@@ -10,11 +10,13 @@ import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline"
 import { TechnicalExpertise } from "@/components/sections/TechnicalExpertise"
 import { RecruiterHighlights } from "@/components/sections/RecruiterHighlights"
 import { Contact } from "@/components/sections/Contact"
+import { Canvas3D } from "@/components/3d/Canvas3D"
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <Canvas3D />
       <main className="flex min-h-screen flex-col relative z-10">
         <Hero />
         
