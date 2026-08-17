@@ -133,6 +133,7 @@ export function ScrollTransitionScene() {
       
       level.ref.current.rotation.z = t * (0.2 + index * 0.1);
       level.ref.current.rotation.y += 0.01;
+      level.ref.current.visible = targetScale > 0.01;
     });
   });
 
@@ -181,8 +182,8 @@ export function ScrollTransitionScene() {
             <torusKnotGeometry args={[1, 0.3, 128, 32]} />
             <MeshTransmissionMaterial
               backside
-              samples={4}
-              resolution={256}
+              samples={2}
+              resolution={128}
               thickness={2}
               chromaticAberration={0.3}
               anisotropy={0.5}
@@ -201,8 +202,8 @@ export function ScrollTransitionScene() {
             <sphereGeometry args={[1.2, 64, 64]} />
             <MeshTransmissionMaterial
               backside
-              samples={4}
-              resolution={256}
+              samples={2}
+              resolution={128}
               thickness={1.5}
               chromaticAberration={0.5}
               anisotropy={0.1}
@@ -221,8 +222,8 @@ export function ScrollTransitionScene() {
             <octahedronGeometry args={[1.5, 0]} />
             <MeshTransmissionMaterial
               backside
-              samples={4}
-              resolution={256}
+              samples={2}
+              resolution={128}
               thickness={2}
               chromaticAberration={0.2}
               anisotropy={0.4}
@@ -246,7 +247,7 @@ export function ScrollTransitionScene() {
           <Lightformer intensity={2} rotation-x={-Math.PI / 2} position={[0, -5, 0]} scale={[10, 10, 1]} />
         </group>
       </Environment>
-      <ContactShadows position={[0, -3.5, 0]} opacity={0.4} scale={15} blur={2.5} far={4} color={isDark ? "#000000" : "#1e293b"} />
+      <ContactShadows resolution={256} frames={1} position={[0, -3.5, 0]} opacity={0.4} scale={15} blur={2.5} far={4} color={isDark ? "#000000" : "#1e293b"} />
     </>
   );
 }
